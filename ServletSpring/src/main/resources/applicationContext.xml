@@ -1,0 +1,26 @@
+<!-- applicationContext.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/jdbc
+                           http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
+    <!--    TODO:因为已经添加了注解，因此不用在XML中配置    -->
+    <!-- Enable component scanning to detect @Service annotated classes -->
+    <context:component-scan base-package="org.lzh"/>
+
+    <!-- Configure DataSource bean -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/your_database_name"/>
+        <property name="username" value="your_database_username"/>
+        <property name="password" value="your_database_password"/>
+    </bean>
+
+    <!-- Define your other beans if needed -->
+
+</beans>

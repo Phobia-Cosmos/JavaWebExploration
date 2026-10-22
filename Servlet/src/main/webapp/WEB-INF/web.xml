@@ -1,0 +1,24 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+    <!-- Servlet Configuration -->
+    <servlet>
+        <servlet-name>MyDispatcherServlet</servlet-name>
+        <servlet-class>org.lzh.MyDispatcherServlet</servlet-class>
+    </servlet>
+
+    <!-- Servlet Mappings -->
+    <servlet-mapping>
+        <servlet-name>MyDispatcherServlet</servlet-name>
+        <url-pattern>/dispatch/*</url-pattern> <!-- Define a URL pattern for your DispatcherServlet -->
+    </servlet-mapping>
+
+    <!-- Define a context parameter -->
+    <context-param>
+        <param-name>contextPath</param-name>
+        <param-value>/myapp</param-value> <!-- Specify your desired context path here -->
+    </context-param>
+
+</web-app>
